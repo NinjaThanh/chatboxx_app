@@ -11,77 +11,74 @@ class _GroupcallState extends State<Groupcall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:  Stack(
-          fit: StackFit.loose,
-          children: [
-            generateBluredImage(),
-            rectShapeContainer(),
-            Positioned(
-              bottom: 200,
-              child: Row(
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 25)),
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[600],
-                    radius: 30,
-                    child: IconButton(
-                      icon: Icon(Icons.mic, color: Color(0xFFFFFFFF)),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 20)),
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[600],
-                    radius: 30,
-                    child: IconButton(
-                      icon: Icon(Icons.volume_up, color: Color(0xFFFFFFFF)),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 20)),
-                  CircleAvatar(
-                    backgroundColor: Colors.grey[600],
-                    radius: 30,
-                    child: IconButton(
-                      icon: Icon(Icons.videocam, color: Color(0xFFFFFFFF)),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 20)),
-                  CircleAvatar(
-                    backgroundColor: Colors.teal,
-                    radius: 30,
-                    child: IconButton(
-                      icon: Icon(Icons.chat_bubble, color: Color(0xFFFFFFFF)),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 20)),
-                  CircleAvatar(
-                    backgroundColor: Color(0xE5BD0918),
-                    radius: 30,
-                    child: IconButton(
-                      icon: Icon(Icons.close, color: Color(0xFFFFFFFF)),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.only(left: 20)),
-
-                ],
-              ),
-            ),
-          ],
-        ),
+      body:  Stack(
+        fit: StackFit.loose,
+        children: [
+          generateBluredImage(),
+          rectShapeContainer(),
+          Positioned(
+            bottom: 200,
+              left: 25,
+               right: 10,
+               child: Row(
+                 children: [
+                   CircleAvatar(
+                     backgroundColor: Colors.grey[600],
+                     radius: 30,
+                     child: IconButton(
+                       icon: Icon(Icons.mic, color: Color(0xFFFFFFFF)),
+                       onPressed: () => Navigator.pop(context),
+                     ),
+                   ),
+                   Padding(padding: EdgeInsets.only(left: 20)),
+                   CircleAvatar(
+                     backgroundColor: Colors.grey[600],
+                     radius: 30,
+                     child: IconButton(
+                       icon: Icon(Icons.volume_up, color: Color(0xFFFFFFFF)),
+                       onPressed: () => Navigator.pop(context),
+                     ),
+                   ),
+                   Padding(padding: EdgeInsets.only(left: 20)),
+                   CircleAvatar(
+                     backgroundColor: Colors.grey[600],
+                     radius: 30,
+                     child: IconButton(
+                       icon: Icon(Icons.videocam, color: Color(0xFFFFFFFF)),
+                       onPressed: () => Navigator.pop(context),
+                     ),
+                   ),
+                   Padding(padding: EdgeInsets.only(left: 20)),
+                   CircleAvatar(
+                     backgroundColor: Colors.teal,
+                     radius: 30,
+                     child: IconButton(
+                       icon: Icon(Icons.chat_bubble, color: Color(0xFFFFFFFF)),
+                       onPressed: () => Navigator.pop(context),
+                     ),
+                   ),
+                   Padding(padding: EdgeInsets.only(left: 20)),
+                   CircleAvatar(
+                     backgroundColor: Color(0xE5BD0918),
+                     radius: 30,
+                     child: IconButton(
+                       icon: Icon(Icons.close, color: Color(0xFFFFFFFF)),
+                       onPressed: () => Navigator.pop(context),
+                     ),
+                   ),
+                 ],
+               ),
+          ),
+        ],
+      ),
     );
   }
   Widget generateBluredImage() {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 160),
-      child: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/rectebgle1110.png"),
-              fit: BoxFit.cover,)),
+    return Positioned.fill(
+      bottom: 160,
+      child: Image.asset(
+        "assets/images/rectebgle1110.png",
+        fit: BoxFit.cover,
       ),
     );
   }
@@ -202,49 +199,172 @@ class _GroupcallState extends State<Groupcall> {
                   ],
                 ),
               ),
+              Padding(padding: EdgeInsets.all(130)),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Stack(
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(image: AssetImage("assets/images/johnn.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.grey.withOpacity(0.8),
+                          ),
+                          child: Icon(
+                            Icons.mic_off,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Stack(
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(image: AssetImage("assets/images/johnn.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.grey.withOpacity(0.8),
+                          ),
+                          child: Icon(
+                            Icons.mic_off,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Stack(
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(image: AssetImage("assets/images/johnn.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.grey.withOpacity(0.8),
+                          ),
+                          child: Icon(
+                            Icons.mic_off,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Stack(
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(image: AssetImage("assets/images/johnn.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.grey.withOpacity(0.8),
+                          ),
+                          child: Icon(
+                            Icons.mic_off,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Stack(
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(image: AssetImage("assets/images/johnn.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.grey.withOpacity(0.8),
+                          ),
+                          child: Icon(
+                            Icons.mic_off,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              )
             ],
-          ),
-          Row(
-            children: [
-              Stack(
-               children: [
-                 Positioned(
-                   top: 0,
-                   left: 0,
-                   child: Container(
-                     padding: EdgeInsets.all(4),
-                     decoration: BoxDecoration(
-                       shape: BoxShape.circle,
-                       border:Border.all(
-                         color: Colors.white,
-                         width: 3,
-                       )
-                     ),
-                     child: CircleAvatar(
-                       radius: 35,
-                       backgroundImage: AssetImage("x.p"),
-                     ),
-                   ),
-                 ),
-                 Positioned(
-                   bottom: 0,
-                   right: 0,
-                   child: Container(
-                     decoration: BoxDecoration(
-                       color: Colors.white,
-                       shape: BoxShape.circle,
-                     ),
-                     padding: EdgeInsets.all(6),
-                     child: Icon(
-                       Icons.mic_off,
-                       size: 18,
-                       color: Colors.white,
-                     ),
-                   ),
-                 )
-              ],
-              ),
-           ],
           ),
         ],
       ),
